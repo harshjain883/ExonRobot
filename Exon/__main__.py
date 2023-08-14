@@ -234,7 +234,9 @@ def start(update: Update, context: CallbackContext):  # sourcery no-metrics
 
         else:
             first_name = update.effective_user.first_name
-            usr = update.effective_user
+            usr = update.effective_message.reply_sticker(
+                "CAACAgUAAxkBAALNrGTV9faZHrkapJzY_k53YxzpjUxpAAJKCAAC6iAoVVOyu-sF25lpMAQ"
+            )
             lol = update.effective_message.reply_text(
                 PM_START_TEX.format(usr.first_name), parse_mode=ParseMode.MARKDOWN
             )
